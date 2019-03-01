@@ -1,0 +1,63 @@
+#本地/本机环境配置文件
+server:
+  port: 5848
+
+#服务名称配置
+spring:
+  application:
+    #数据库访问配置
+  datasource:
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    driverClassName: com.mysql.cj.jdbc.Driver
+    filters: stat,wall,log4j
+    initialSize: 5
+    maxActive: 20
+    maxPoolPreparedStatementPerConnectionSize: 20
+    maxWait: 60000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 5
+    poolPreparedStatements: true
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    type: com.alibaba.druid.pool.DruidDataSource
+    url:  jdbc:mysql://127.0.0.1:3306/mingjun?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    validationQuery: SELECT 1 FROM DUAL
+    #    freemarker静态资源配置
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+    charset: utf-8
+    cache: false
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+
+# MyBatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:config/mybatis-config.xml
+
+pagehelper:
+    helper-dialect: mysql
+      #是否自动检测参数
+    reasonable: false
+    support-methods-arguments: true
+    params: count=countSql
+
+
+#日志配置信息
+logging:
+#  pattern:
+#    console: "%d - %msg%n"
+  level:
+    com.app: DEBUG
+#  path: D:/file/
+#文件路径
+fileUrl: /usr/wsb/images
+
