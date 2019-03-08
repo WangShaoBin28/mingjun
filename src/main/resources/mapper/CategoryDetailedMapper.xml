@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.app.dao.CategoryDetailedDao">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+    insert
+    into category_detailed_info(id,fileName,fileUrl,childId,firstShow)
+    values
+    (#{id},#{fileName},#{fileUrl},#{childId},#{firstShow})
+    </insert>
+    <select id="select" resultType="com.app.entity.CategoryDetailedEntity">
+        select * from category_detailed_info
+    </select>
+</mapper>

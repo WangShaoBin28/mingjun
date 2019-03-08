@@ -13,7 +13,7 @@ import java.util.Optional;
  * @Author shaobin.wang
  * @Date 2019/03/01 11:50
  * @Version 1.0
- * @Description:
+ * @Description: 我要装饰
  **/
 @Data
 public class ReturnInfo<T> {
