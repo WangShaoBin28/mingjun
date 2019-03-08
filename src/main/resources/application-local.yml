@@ -1,6 +1,6 @@
 #本地/本机环境配置文件
 server:
-  port: 5848
+  port: 8080
 
 #服务名称配置
 spring:
